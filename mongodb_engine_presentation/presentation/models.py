@@ -14,6 +14,9 @@ class Slide(models.Model):
     index = models.PositiveIntegerField()
     title = models.CharField(max_length=200)
     content = models.TextField()
+
+    # Should be commented if using a List based slides storage.
+    # Used as a proof that mongodb-engine knows how to handler fk.
     presentation = models.ForeignKey(Presentation, db_index=True)
 
     class Meta:
